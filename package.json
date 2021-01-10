@@ -10,7 +10,7 @@
     "url": "https://github.com/antfu/vscode-as-fs"
   },
   "engines": {
-    "vscode": "^1.45.1"
+    "vscode": "^1.52.0"
   },
   "categories": [
     "Other"
