@@ -1,7 +1,7 @@
 {
   "name": "as-fs",
   "displayName": "VS Code as FileSystem",
-  "description": "Mounts VS Code status as files to be processed by other tools.",
+  "description": "Mounts VS Code states as files to be processed by other tools.",
   "version": "0.0.1",
   "publisher": "antfu",
   "license": "MIT",
@@ -55,7 +55,8 @@
   "scripts": {
     "vscode:prepublish": "npm run compile",
     "compile": "tsc -p ./",
-    "watch": "tsc -watch -p ./"
+    "watch": "tsc -watch -p ./",
+    "release": "npx bumpp --commit --tag --push && vsce publish"
   },
   "devDependencies": {
     "@antfu/eslint-config": "^0.4.3",

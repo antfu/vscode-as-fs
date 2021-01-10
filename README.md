@@ -1,5 +1,5 @@
 # VS Code As FileSystem
 
-{WIP} Mounts VS Code status as files to be processed by other tools.
+{WIP} Mounts VS Code states as files to be processed by other tools.
 
-Inspired by [TabFS](https://github.com/osnr/TabFS).
+Heavily inspired by [TabFS](https://github.com/osnr/TabFS).

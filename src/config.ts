@@ -1,5 +1,5 @@
 import { resolve } from 'path'
-import {  workspace } from 'vscode'
+import { workspace } from 'vscode'
 
 export const Config = {
   get enabled() {
