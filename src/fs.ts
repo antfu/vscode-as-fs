@@ -22,7 +22,7 @@ export default class FS {
 
       try {
         const { mtime, type } = await workspace.fs.stat(uri)
-        if (type === FileType.Directory || mtime === this.mtimeMap[fullPath])
+        if (type === FileType.Directory || mtime <= this.mtimeMap[fullPath])
           return
         this.mtimeMap[fullPath] = mtime
       }
@@ -51,6 +51,7 @@ export default class FS {
 
     const filepath = resolve(Config.path, path)
     const uri = Uri.file(filepath)
+    this.mtimeMap[filepath] = +new Date()
     await workspace.fs.writeFile(uri, Buffer.from(content, 'utf-8'))
     const { mtime } = await workspace.fs.stat(uri)
     this.mtimeMap[filepath] = mtime
