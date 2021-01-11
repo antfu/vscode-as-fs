@@ -1,6 +1,6 @@
 {
   "name": "as-fs",
-  "displayName": "VS Code as FileSystem",
+  "displayName": "VS Code as FS",
   "description": "Mounts VS Code states as files to be processed by other tools.",
   "version": "0.0.5",
   "publisher": "antfu",
@@ -44,9 +44,13 @@
         "as-fs.modules": {
           "type": "array",
           "items": {
-            "type": "string"
+            "type": "string",
+            "enum": [
+              "current-tab",
+              "current-selections"
+            ]
           },
-          "default": [],
+          "default": ["current-tab"],
           "description": "Enabled modules"
         }
       }

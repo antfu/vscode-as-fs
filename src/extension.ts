@@ -23,10 +23,17 @@ export function activate(ctx: ExtensionContext) {
 }
 
 export function configUpdated() {
-  if (Config.enabled)
-    modules.map(m => m.activate())
-  else
+  const enabled = Config.enabledModules
+  if (Config.enabled) {
+    modules.map(m =>
+      enabled?.includes(m.name)
+        ? m.activate()
+        : m.deactivate(),
+    )
+  }
+  else {
     deactivate()
+  }
 }
 
 export async function deactivate() {

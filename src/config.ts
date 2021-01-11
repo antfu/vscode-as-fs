@@ -6,6 +6,10 @@ export const Config = {
     return workspace.getConfiguration().get<boolean>('as-fs.enabled')
   },
 
+  get enabledModules() {
+    return workspace.getConfiguration().get<string[]>('as-fs.modules') || []
+  },
+
   get root() {
     return workspace.workspaceFolders?.[0]?.uri?.fsPath || ''
   },
