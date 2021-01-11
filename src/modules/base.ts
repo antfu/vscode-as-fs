@@ -1,20 +1,22 @@
-import { Disposable, ExtensionContext } from 'vscode'
+import { Disposable, ExtensionContext, Uri } from 'vscode'
 import FS from '../fs'
 
 export default abstract class Module {
   abstract name: string
   active = false
   disposables: Disposable[] = []
+  files: string[] = []
 
   constructor(
     public readonly ctx: ExtensionContext,
     public readonly fs: FS,
   ) {
-
+    this.fs.registerModule(this)
   }
 
-  abstract onActivated(): void
-  abstract onDeactivated(): void
+  onActivated() {}
+  onDeactivated() {}
+  onChanged(uri: Uri, content: string) {}
 
   activate() {
     if (this.active)
@@ -30,5 +32,6 @@ export default abstract class Module {
     this.disposables.map(i => i.dispose())
     this.disposables = []
     this.active = false
+    this.fs.unregisterModule(this)
   }
 }

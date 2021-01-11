@@ -3,6 +3,7 @@ import Module from './base'
 
 export default class CurrentSelectionsModule extends Module {
   name = 'current-selections'
+  files = ['current-tab/selections.json']
 
   onActivated() {
     const update = this.update.bind(this)
@@ -11,10 +12,6 @@ export default class CurrentSelectionsModule extends Module {
       window.onDidChangeTextEditorSelection(update),
     )
     update()
-  }
-
-  onDeactivated() {
-
   }
 
   update() {

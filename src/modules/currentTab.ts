@@ -1,8 +1,9 @@
-import { window } from 'vscode'
+import { Uri, window } from 'vscode'
 import Module from './base'
 
 export default class CurrentTabModule extends Module {
   name = 'current-tab'
+  files = ['current-tab/path']
 
   onActivated() {
     const update = this.update.bind(this)
@@ -13,14 +14,13 @@ export default class CurrentTabModule extends Module {
     update()
   }
 
-  onDeactivated() {
-
-  }
-
   update() {
     const editor = window.activeTextEditor
     const doc = editor?.document
     this.fs.updateFile('current-tab/path', doc?.uri.fsPath || '')
   }
-  // TODO: watch on file change
+
+  onChanged(uri: Uri, content: string) {
+    window.showTextDocument(Uri.file(content.trim()))
+  }
 }
