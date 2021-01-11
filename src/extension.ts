@@ -1,4 +1,5 @@
-import { ExtensionContext } from 'vscode'
+import { ExtensionContext, workspace } from 'vscode'
+import { Config } from './config'
 import FS from './fs'
 import Module from './modules/base'
 import CurrentSelectionsModule from './modules/currentSelections'
@@ -17,8 +18,15 @@ export function activate(ctx: ExtensionContext) {
     ].map(C => new C(ctx, fs)),
   )
 
-  // TODO: read from config
-  modules.map(m => m.activate())
+  configUpdated()
+  workspace.onDidChangeConfiguration(configUpdated)
+}
+
+export function configUpdated() {
+  if (Config.enabled)
+    modules.map(m => m.activate())
+  else
+    deactivate()
 }
 
 export async function deactivate() {
