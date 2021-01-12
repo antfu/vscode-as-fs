@@ -58,6 +58,11 @@ export default class FS {
   }
 
   async clear() {
-    await workspace.fs.delete(Uri.file(Config.path), { recursive: true, useTrash: false })
+    try {
+      await workspace.fs.delete(Uri.file(Config.path), { recursive: true, useTrash: false })
+    }
+    catch (e) {
+
+    }
   }
 }
