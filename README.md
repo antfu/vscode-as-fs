@@ -1,4 +1,10 @@
-# VS Code as FS
+<p align="center">
+  <img src="./res/icon.png" height="250" width="250">
+</p>
+
+<h2 align="center">
+VS Code as FS
+</h2>
 
 > Heavily inspired by [TabFS](https://github.com/osnr/TabFS).
 
