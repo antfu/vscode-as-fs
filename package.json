@@ -2,7 +2,7 @@
   "name": "as-fs",
   "displayName": "VS Code as FS",
   "description": "Mounts VS Code states as files to be processed by other tools.",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "publisher": "antfu",
   "license": "MIT",
   "icon": "res/icon.png",
