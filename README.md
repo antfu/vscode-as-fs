@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="./res/icon.png" height="250" width="250">
+  <img src="https://raw.githubusercontent.com/antfu/vscode-as-fs/489206af84d1824d5ac98f64be502767f01a768d/res/icon.png" height="250" width="250">
 </p>
 
 <h2 align="center">
@@ -8,7 +8,11 @@ VS Code as FS
 
 > Heavily inspired by [TabFS](https://github.com/osnr/TabFS).
 
-{WIP} Mounts VS Code states as files to be processed by other tools.
+{WIP} Mounts VS Code states as files to be processed by other tools!
+
+<p align="center">
+  <img src="https://github.com/antfu/vscode-as-fs/blob/main/screenshots/fs.png?raw=true" width="100">
+</p>
 
 ## Configration
 
