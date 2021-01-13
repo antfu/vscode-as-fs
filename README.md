@@ -11,7 +11,7 @@ VS Code as FS
 {WIP} Mounts VS Code states as files to be processed by other tools!
 
 <p align="center">
-  <img src="https://github.com/antfu/vscode-as-fs/blob/main/screenshots/fs.png?raw=true" width="100">
+  <img src="https://github.com/antfu/vscode-as-fs/blob/main/screenshots/fs.png?raw=true" width="200">
 </p>
 
 ## Configration
